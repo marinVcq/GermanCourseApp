@@ -1,0 +1,90 @@
+.registerContainer
+    @include flexbox(column, center,center)
+    @include width-height(100vw, 100vh)
+    gap: 20px
+    //background-color: rgb(33,33,33 )
+    background-image: url('https://iili.io/HUpkHaj.jpg')
+    background-position: center
+    background-size: cover
+
+
+    .homeLink
+        @include set-position(absolute, 0,0)
+        @include width-height(170px, 40px)
+        @include flexbox(column, center,center)
+        margin: 10px
+        font-size: 1.5rem
+        font-weight: bold
+        border-radius: 4px
+        background-color: rgba(250,250,250,0.3)
+
+
+
+    form
+        @include flexbox(column, flex-start, start)
+        @include width-height(90%,none)
+        gap: 1.5rem
+        background-color: rgba(240,240,240,0.85)
+        padding: 2rem
+        border-radius: 8px
+        max-width: 45rem
+
+        label
+            font-size: 1.5rem
+
+        input
+            @include width-height(100%, 5rem)
+            padding: 1rem
+            border-style: none
+            border-radius: 4px
+
+        button
+            @include width-height(100%, 5rem)
+            padding: 6px
+            border-radius: 4px
+
+        .loginButton
+            margin-top: 2rem
+            border-style: none
+            background-color: rgba(#71B54E, 0.8)
+            color: white
+            font-size: 1.5rem
+            font-weight: bold
+
+        .registerButton
+            margin-top: 2rem
+            border-style: none
+            background-color: rgba(#71B54E, 0.8)
+            color: white
+            font-size: 1.5rem
+            font-weight: bold
+        
+        .loginError
+            align-self: center
+            font-size: 1.4rem
+            color: red
+    
+    .bubble
+        @include set-position(absolute, none,0,4rem,50%)
+        transform: translateX(-50%)
+        @include flexbox(column,center,center)
+        @include width-height(90%, 6rem)
+        background: linear-gradient(0deg, #e6e6e6 13%, #ffffff 100%)
+        color: #4d4848
+        font-size: 1.2rem
+        line-height: 1.8rem
+        padding: 1rem
+        border-radius: 0.6rem
+        max-width: 45rem
+
+        &:after
+            position: relative
+            top: 2.3rem
+            left: 12rem
+            content: ''
+            display: block
+            z-index: 1
+            border-style: solid
+            border-width: 23px 29px 0 0 
+            margin-top: -1.35rem
+            border-color: #e6e6e6 transparent transparent transparent

@@ -1,8 +1,14 @@
 import React from 'react'
+import { ReactSVG } from "react-svg";
+
+
 
 const Home = () => {
   return (
-    <div>This is my homepage</div>
+    <div className='homeContainer'>
+      <h1>Accueil</h1>
+      <ReactSVG src="../assets/bg.svg" />
+    </div>
   )
 }
 
