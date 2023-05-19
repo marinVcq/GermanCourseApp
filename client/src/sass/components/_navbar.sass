@@ -1,48 +1,115 @@
 // MOBILE DEVICE
 .navbarContainer
+    @include set-position(fixed, 0,0)
     @include width-height(100vw, 7rem)
     @include flexbox(row, space-between, center)
     background-color: rgb(240,240,240)
     z-index: 10
 
+    // LOGO
     .logo
+        @include width-height(100%, 100%)
         @include flexbox(row,flex-start,center)
-        margin-left: 1rem
+        margin-left: 2rem
 
         img
             padding-right: 1rem
 
-        p
-            font-size: 1.8rem
+        .textLogo
+            font-size: 2rem
             font-weight: bold
-    .menuBtn
-        @include width-height(5rem,5rem)
-        background-color: transparent
-        justify-self: end
-        margin: 1rem
-        z-index: 1
+    
+    // LOGIN BTN
+    .loginBtnContainer
+        text-align: right
+        margin-right: 2rem
 
-    .menu
-        @include set-position(absolute,-11rem,0,0,0)
-        @include width-height(100%, 18rem)
-        @include flexbox(column, center ,center)
-        transition: all 0.2s linear
-        background-color: rgba(240,240,240,0.95)
-        z-index: -1
-        gap: 2rem
+        .loginBtn
+            height: 3.65rem
+            border-style: none
+            background-color: 	#483D8B
+            border-radius: 0.4rem
+            color: white
+            font-size: 1.5rem
+            padding: 0.5rem 1rem 0.5rem 1rem
 
-        &.show 
-            @include set-position(absolute,7rem,0,0,0)
-        
-        .link
-            @include width-height(100%, 3rem)
-            @include flexbox(row,center,center)
-            border-bottom: 1px solid rgba(33,33,33,0.2)
-            padding-bottom: 2rem
-            h6
-                font-size: 1.7rem
-                font-weight: 300
+            .link
+                color: white
+
+// BURGER WRAPPER BTN
+.menuBtn
+    object-fit: cover
+    background-color: transparent
+    justify-self: end
+    margin-right: 2rem
+    z-index: 1
+
+// EXPANDED MENU
+.menu
+    @include set-position(absolute,-14rem,0,0,0)
+    @include width-height(100%, 21rem)
+    @include flexbox(column, center ,center)
+    background-color: rgb(240,240,240)
+    transition: all 0.2s linear
+    z-index: 1
+    opacity: 0
+
+    &.show 
+        opacity: 1
+        @include set-position(absolute,7rem,0,0,0)
+    
+    .link
+        @include width-height(100%, 7rem)
+        @include flexbox(row,center,center)
+        border-bottom: 1px solid rgba(33,33,33,0.1)
+        // padding-bottom: 2rem
+        h6
+            font-size: 1.7rem
+            font-weight: 300
+
+        &.selected
+            background-color: rgba(240,240,240,0.3)
+
+.bg-layer
+    @include width-height(100vw,0)
+    @include set-position(absolute, none,0,0)
+    background-color: rgba(33,33,33,0.8)
+    z-index: 1
+    transition: all 0.15s linear
+    opacity: 0
+
+    &.active
+        height: 80vh
+        opacity: 1
+
 
 // DESKTOP DEVICE
 
+@include respond(desktop)
+    .navbarContainer
+        @include width-height(100vw, 7rem)
+        @include flexbox(row, center, center )
+
+        .navbar
+            @include width-height(100%, 7rem)
+            @include flexbox(row, flex-start, center)
+            max-width: 100rem
+            background-color: rgb(240,240,240)
+            .logo
+                @include width-height(unset, 100%)
+                margin-right: 5rem
+                .textLogo
+                    font-size: 3rem
+            .menu
+                @include set-position(unset,0,0)
+                @include flexbox(row,flex-start,center)
+                @include width-height(unset,100%)
+                opacity: 1
+                gap: 5rem
+
+            // LOGIN BTN
+            .loginBtnContainer
+                @include width-height(100%,unset)
+                text-align: right
+                margin-right: 2rem
 

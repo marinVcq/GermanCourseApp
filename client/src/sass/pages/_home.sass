@@ -1,9 +1,28 @@
 .homeContainer
-    @include set-position(absolute, 0,0,0,0)
-    margin-top: 7rem
-    @include width-height(100%,100%)
-    min-height: 89vh
-    align-items: stretch
-    background-position: center
-    background-size: cover
-    z-index: -2
+    padding-top: 7rem
+    min-height: 100vh
+    @include width-height(100vw,100%)
+    @include flexbox(column,flex-start,center)
+
+    .home
+        @include width-height(100%,100%)
+        @include flexbox(column,center,center)
+
+        img
+            @include width-height(100%,100%)
+            object-fit: cover
+    
+    
+    
+@include respond(desktop)    
+    .homeContainer
+
+        .home 
+
+            max-width: 110rem
+            background: white
+            
+            img
+                object-fit: cover
+                height: 30rem
+                max-width: 100rem

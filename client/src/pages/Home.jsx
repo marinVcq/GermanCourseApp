@@ -1,14 +1,21 @@
 import React from 'react'
-import { ReactSVG } from "react-svg";
+import BrandeburgGate from '../assets/home_header.jpg'
 
 
 
 const Home = () => {
   return (
-    <div className='homeContainer'>
-      <h1>Accueil</h1>
-      <ReactSVG src="../assets/bg.svg" />
-    </div>
+      <div className='homeContainer'>
+
+        <div className='home'>
+
+          <img className="headerImage" src={BrandeburgGate}></img>
+          <h1><b>Klar</b> Le site participatif</h1>
+          <h2>Dernières Leçons</h2>
+
+        </div>
+
+      </div>     
   )
 }
 
