@@ -26,3 +26,11 @@
                 object-fit: cover
                 height: 30rem
                 max-width: 100rem
+            
+            .posts
+                @include flexbox(row, center, flex-start)
+                flex-wrap: wrap
+                gap: 2.5rem
+
+                .post
+                    width: 30%
